@@ -1,0 +1,2 @@
+run = "python Flask_Blog/flaskblog.py"
+language = "python3"

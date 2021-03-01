@@ -27,5 +27,7 @@ bcrypt = Bcrypt(app)
 # We will add some functionality to our database models
 # and then it will handle all the sessions in the background for us
 login_manager = LoginManager(app)
+login_manager.login_view = "login"
+login_manager.login_message_category = "info"
 
 from flaskblog import routes

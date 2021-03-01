@@ -5,6 +5,9 @@
 
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
+
 
 
 app = Flask(__name__)
@@ -19,4 +22,10 @@ db = SQLAlchemy(app)
 # The classes are called models
 # Each class will be it's own table in the database
 # First, let's create the user class to hold our users
+bcrypt = Bcrypt(app)
+
+# We will add some functionality to our database models
+# and then it will handle all the sessions in the background for us
+login_manager = LoginManager(app)
+
 from flaskblog import routes

@@ -161,3 +161,6 @@ def user_posts(username):
 	return render_template("user_posts.html",user=user, posts=posts)
 
 
+# Now we craete routes for a user to reset their password
+# And also see how to send an email with the link that
+# they use to do that. 

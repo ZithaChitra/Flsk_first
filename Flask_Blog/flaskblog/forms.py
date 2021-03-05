@@ -79,3 +79,14 @@ class PostForm(FlaskForm):
 
 
 
+# Form for when they first go to the reset password
+# page, where they can submit their email account 
+# to where the instructions for reseting the password
+# will be sent.
+class RequestResetForm(FlaskForm):
+	email = StringField("Email", validators=[DataRequired(), Email()])
+	submit = SubmitField("Request password reset", validators=[])
+
+	# check that an account exists for the given email address
+	def validate_email(self, email):
+		user = User.filter_by(email=email)
